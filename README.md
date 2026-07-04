@@ -1,22 +1,111 @@
-# Cognitif Group Limited — website
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Cognitif Group Limited</title>
+<meta name="description" content="About Cognitif Group Limited.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-header.png" alt="Cognitif Group Limited" width="32" height="32">
+        <span class="brand-text">Cognitif Group Limited</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="semantic-bathymetry.html">Semantic Bathymetry™</a></li>
+            <li><a href="petalyx.html">Petalyx™</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="about.html" aria-current="page">About Us</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <section class="hero hero--tight">
+    <div class="hero-texture" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <h1>About Us</h1>
+      <p class="lede" style="max-width:760px;">Petalyx&trade; and the Ontologos data pipeline have been engineered to protect information, respect privacy and support responsible AI. Our governance framework follows internationally recognised standards, including ISO/IEC 27001, ISO/IEC 27701 and ISO/IEC 42001, providing a structured path towards independent certification and regulatory compliance with all aspects of UK GDPR.</p>
+    </div>
+  </section>
 
-## Important: caching fix in this version
-vercel.json previously set a 1-year immutable cache on all /assets/ files, including
-the CSS. That's likely why earlier fixes didn't visibly take effect — browsers and
-Vercel's edge could keep serving the old stylesheet after redeploy. Fixed: images keep
-the long cache (they're safe to cache hard since filenames change when replaced), but
-CSS/JS now revalidate every time, and the stylesheet is linked with ?v=2 to force a
-fresh fetch regardless of what's cached. If you edit the CSS again in future, bump that
-version number (?v=3, etc.) to guarantee it isn't served stale.
+  <section>
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <h3>Company</h3>
+          <p class="slate">Cognitif Group Limited<br>Company No. 17154680<br>Registered in England &amp; Wales</p>
+          <p class="slate">128 City Road<br>London, United Kingdom<br>EC1V 2NX</p>
+        </div>
+        <div>
+          <h3>Founder</h3>
+          <p class="slate">Andrew Carter, Founder &amp; CEO</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-## What changed this round
-- Removed the "Attractors and repulsion trenches / Reading the signature" section from
-  the Semantic Bathymetry page.
-- Technology page: back to four cards, same size and format (Petalyx, Ontologos, Semba,
-  Insightvault). The two images were removed last round because the ".ai" suffix was
-  baked into the picture itself, not because of anything else.
-- About page: removed the IP Protected panel, added the founder photo.
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="panel-navy">
+        <span class="eyebrow" style="color:var(--indigo-text);">IP protected</span>
+        <h2 class="mt-0">Intellectual property</h2>
+        <hr class="rule-blue">
+        <dl class="ip-block">
+          <dt>Trademarks registered</dt>
+          <dd>Petalyx&trade; (UK00004375273) and Semantic Bathymetry&trade; (UK00004375278), Classes 9 and 42.</dd>
+          <dt>Patent applications filed</dt>
+          <dd>GB2614699.3 &mdash; System and Method for On-Device Anonymisation.</dd>
+          <dd>GB2615038.3 &mdash; Privacy-Preserving Data Processing System.</dd>
+          <dt>Registered design</dt>
+          <dd>Application No. 6520963.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-## Deploying
-Push this folder to your GitHub repo (Add file → Upload files, overwrite everything).
-Vercel redeploys automatically.
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Cognitif Group Limited</p>
+          <p>Company No. 17154680, registered in England &amp; Wales.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="semantic-bathymetry.html">Semantic Bathymetry&trade;</a></li>
+            <li><a href="petalyx.html">Petalyx&trade;</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+441174090968">+44 117 409 0968</a></li>
+            <li><a href="mailto:cognitif@semba.ai">cognitif@semba.ai</a></li>
+            <li><a href="privacy.html">Privacy Statement</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Cognitif Group Limited. Semantic Bathymetry&trade; and Petalyx&trade; are trademarks of Cognitif Group Limited.
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

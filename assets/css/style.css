@@ -39,7 +39,8 @@ a:focus-visible, button:focus-visible{
   outline-offset: 3px;
 }
 
-.wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 36px; }
+.wrap{ max-width: var(--maxw) !important; margin: 0 auto !important; padding: 0 36px !important; box-sizing: border-box !important; }
+html, body{ overflow-x: hidden; }
 
 h1,h2,h3{
   font-family: var(--font-display);
