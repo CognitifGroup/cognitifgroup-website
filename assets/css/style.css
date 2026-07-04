@@ -120,11 +120,18 @@ nav.main-nav a:hover, nav.main-nav a[aria-current="page"]{ opacity: 1; color: va
   position:absolute; top:0; right:0; height:100%; width:46%;
   background-image: url('../img/topo-texture-v2.jpg');
   background-size: cover; background-position: center;
-  opacity: 0.5;
+  opacity: 0.65;
   mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
   -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
 }
-@media (max-width: 700px){ .hero-texture{ display:none; } }
+@media (max-width: 700px){
+  .hero-texture{
+    width:100%; height:60%; top:auto; bottom:0; right:0;
+    opacity:0.55;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  }
+}
 
 /* ---------- Buttons ---------- */
 .btn{ display:inline-block; font-family: var(--font-body); font-weight: 600; font-size: 0.92rem;
