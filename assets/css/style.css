@@ -98,13 +98,25 @@ nav.main-nav a:hover, nav.main-nav a[aria-current="page"]{ opacity: 1; color: va
   position: relative;
   overflow: hidden;
 }
+.hero-logo{
+  position: absolute;
+  top: 64px;
+  right: 36px;
+  height: 72px;
+  width: 72px;
+  z-index: 2;
+}
+.hero:not(.hero--tight) .hero-logo, .hero--no-eyebrow .hero-logo{ top: 32px; }
+@media (max-width: 700px){
+  .hero-logo{ position: static !important; height:48px; width:48px; margin: 24px auto 12px; display:block; }
+}
 .hero-inner{ position:relative; z-index:1; padding: 64px 0 56px; }
 .hero--tight .hero-inner{ padding: 46px 0 42px; }
 .hero h1{ max-width: 700px; }
 .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 1.5em; }
 .hero-texture{
   position:absolute; top:0; right:0; height:100%; width:46%;
-  background-image: url('../img/topo-texture.jpg');
+  background-image: url('../img/topo-texture-v2.jpg');
   background-size: cover; background-position: center;
   opacity: 0.5;
   mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
