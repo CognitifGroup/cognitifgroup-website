@@ -26,7 +26,12 @@ body{
   margin:0;
   font-family: var(--font-body);
   color: var(--ink);
-  background: #FFFFFF;
+  background:
+    linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)),
+    url('../img/topo-texture-v2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   line-height: 1.62;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
@@ -116,20 +121,22 @@ nav.main-nav a:hover, nav.main-nav a[aria-current="page"]{ opacity: 1; color: va
 .hero--tight .hero-inner{ padding: 46px 0 42px; }
 .hero h1{ max-width: 700px; }
 .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 1.5em; }
+.plain-link{ color: var(--navy); font-weight:600; text-decoration:underline; margin-right:24px; }
+.plain-link:hover{ color: var(--coral-deep); }
 .hero-texture{
-  position:absolute; top:0; right:0; height:100%; width:46%;
+  position:absolute; top:0; right:0; height:100%; width:60%;
   background-image: url('../img/topo-texture-v2.jpg');
   background-size: cover; background-position: center;
-  opacity: 0.65;
-  mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
+  opacity: 0.9;
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.95), transparent);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.95), transparent);
 }
 @media (max-width: 700px){
   .hero-texture{
-    width:100%; height:60%; top:auto; bottom:0; right:0;
-    opacity:0.55;
-    mask-image: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    width:100%; height:68%; top:auto; bottom:0; right:0;
+    opacity:0.8;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
   }
 }
 
