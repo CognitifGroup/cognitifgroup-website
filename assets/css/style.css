@@ -28,7 +28,7 @@ body{
   color: var(--ink);
   background:
     linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)),
-    url('../img/topo-texture-v2.jpg');
+    url('../img/topo-texture-v3.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -125,7 +125,7 @@ nav.main-nav a:hover, nav.main-nav a[aria-current="page"]{ opacity: 1; color: va
 .plain-link:hover{ color: var(--coral-deep); }
 .hero-texture{
   position:absolute; top:0; right:0; height:100%; width:60%;
-  background-image: url('../img/topo-texture-v2.jpg');
+  background-image: url('../img/topo-texture-v3.jpg');
   background-size: cover; background-position: center;
   opacity: 0.9;
   mask-image: linear-gradient(to left, rgba(0,0,0,0.95), transparent);
