@@ -1,34 +1,22 @@
 # Cognitif Group Limited — website
 
 Static site: Home, Semantic Bathymetry™, Petalyx™, Technology, About Us, Privacy Statement.
-Plain HTML/CSS/JS, no build step, no framework. Deploys to Vercel as-is.
+Plain HTML/CSS/JS, no build step, no framework, no external font loading, no analytics.
 
-## Before you publish
-Open `privacy.html` and fill in `[insert date]` near the top, plus the cookie and
-retention sections once those are decided.
+## What changed in this version
+- Removed Google Fonts — system fonts only (Georgia / Arial), same everywhere.
+- Unified the two shades of navy into one.
+- Removed the two images (layer pipeline, chart room) that had ".ai" suffixes baked into
+  the picture itself — replaced with plain HTML cards. Cropped the six-coordinates image
+  to remove its baked-in "Semba.ai" subtitle.
+- Rewrote the Privacy Statement to state what you told me is actually true: this site
+  collects no personal data, shares nothing, transfers nothing internationally. Removed
+  the placeholder brackets and the leftover "before publishing" note that should never
+  have shipped.
+- Removed the duplicated address/company number from the footer on the About page (kept
+  it once, in the body).
+- Added the topographic background to every page's hero, not just Home.
 
-One editorial call worth knowing about: on Home and About, I kept the "no personal
-data / no consent mechanism" claims from your pitch deck copy, but reworded the
-"no data controller liability" line to "designed to contain no personal data" rather
-than asserting the liability conclusion outright — that's a legal conclusion, not a
-design fact, and you've got the ICO Innovation Advice case open on exactly this
-question. Worth a look before publishing regardless of what I did with it.
-
-## Deploying to Vercel (free tier)
-Same as before: push this folder to your GitHub repo (Add file → Upload files,
-overwrite everything), Vercel redeploys automatically. If the domain's already
-connected, no further Vercel/GoDaddy steps are needed.
-
-## File structure
-```
-index.html                   Home
-semantic-bathymetry.html     Semantic Bathymetry™
-petalyx.html                 Petalyx™
-technology.html               Technology (four-layer architecture)
-about.html                   About Us + IP
-privacy.html                 Privacy Statement
-assets/css/style.css         All styling
-assets/js/main.js            Mobile nav toggle only
-assets/img/                  Logo, favicon, and diagrams from your materials
-vercel.json                  Caching + security headers
-```
+## Deploying
+Push this folder to your GitHub repo (Add file → Upload files, overwrite everything).
+Vercel redeploys automatically. Domain and DNS are already configured per your last steps.

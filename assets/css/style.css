@@ -2,7 +2,6 @@
 
 :root{
   --navy:      #10243F;
-  --navy-deep: #0D1B4B;
   --navy-line: #2C4568;
   --coral:     #D4785F;
   --coral-deep:#A8532F;
@@ -15,8 +14,8 @@
   --line:      #DEDBCE;
   --radius:    2px;
 
-  --font-display: "Fraunces", "Cambria", Georgia, serif;
-  --font-body: "Inter", "Calibri", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
 
   --maxw: 1080px;
 }
@@ -140,7 +139,7 @@ hr.rule{ border:none; border-top: 1px solid var(--line); margin: 2em 0; }
 
 /* ---------- Navy panel (problem / solution / IP) ---------- */
 .panel-navy{
-  background: var(--navy-deep);
+  background: var(--navy);
   color: #F2F3FA;
   padding: 44px 40px;
   border-radius: var(--radius);
