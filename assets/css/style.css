@@ -181,7 +181,8 @@ hr.rule{ border:none; border-top: 1px solid var(--line); margin: 2em 0; }
 @media (max-width:700px){ .about-row{ flex-direction:column; } }
 .card{ background:#FFFFFF; border:1px solid var(--line); padding: 26px 24px; }
 .card h3{ margin-bottom:0.4em; font-size:1.05rem; }
-.card p{ color: var(--slate); font-size:0.94rem; margin-bottom:0; }
+.card p{ color: var(--slate); font-size:0.94rem; margin-bottom:0.9em; }
+.card p:last-child{ margin-bottom:0; }
 .card .tag{ display:inline-block; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color: var(--coral-deep); margin-bottom:0.6em; }
 
 /* ---------- Navy panel (problem / solution / IP) ---------- */
