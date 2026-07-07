@@ -180,11 +180,11 @@ hr.rule{ border:none; border-top: 1px solid var(--line); margin: 2em 0; }
 .about-col{ flex:0 1 auto; }
 @media (max-width:700px){ .about-row{ flex-direction:column; } }
 
-.two-min-row{ display:flex; gap:56px; align-items:center; }
-.two-min-list{ list-style:none; margin:0; padding:0; flex:0 1 30%; min-width:220px; }
+.two-min-row{ display:flex; gap:36px; align-items:center; }
+.two-min-list{ list-style:none; margin:0; padding:0; flex:0 1 29%; min-width:220px; }
 .two-min-list li{ font-size:1.02rem; line-height:1.5; color:var(--ink); margin-bottom:1em; padding-left:1.1em; position:relative; }
 .two-min-list li::before{ content:""; position:absolute; left:0; top:0.6em; width:8px; height:8px; background:var(--coral-deep); }
-.diagram.two-min-figure{ flex:0 1 70%; min-width:280px; margin:0; padding:6px; }
+.diagram.two-min-figure{ flex:0 1 73%; min-width:280px; margin:0; padding:2px; border-width:0; }
 .two-min-figure img{ width:100%; height:auto; display:block; }
 @media (max-width:860px){
   .two-min-row{ flex-direction:column; }
