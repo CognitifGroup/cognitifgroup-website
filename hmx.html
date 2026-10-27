@@ -16,8 +16,8 @@
   .hmx-box li { margin-bottom:0.8em; }
   .hmx-images { display:flex; flex-direction:column; gap:24px; align-items:center; }
   .hmx-images img { width:100%; height:auto; display:block; background:var(--paper); }
-  .hmx-images .hmx-k { max-width:420px; }
-  .hmx-images .hmx-p { max-width:560px; }
+  .hmx-images .hmx-k { max-width:640px; }
+  .hmx-box .hmx-p { width:100%; height:auto; display:block; margin-top:24px; background:var(--paper); }
 </style>
 </head>
 <body>
@@ -67,11 +67,11 @@
             <li class="slate"><strong>Natural dialogue, not acted speech.</strong> HMX is trained on free-format unstructured human dialogue, rather than acted- or prompted inputs, public broadcast or podcast media.</li>
           </ul>
           <p class="slate center" style="margin-top:1.2em; margin-bottom:0;"><a href="https://hmx.cognitifgroup.ai/" target="_blank" rel="noopener">Try the HMX demo</a></p>
+          <img class="hmx-p" src="assets/img/hmx-pipeline_20261027b.png" alt="Diagram of a streamed voice input passing through a chain of analysis stages into a k-vector and onward to SEMBA, with feedback loops returning to the start of the chain.">
         </div>
 
         <div class="hmx-images">
           <img class="hmx-k" src="assets/img/hmx-k-space_20261027d.png" alt="Infographic: HMX maps voice affect into k-space. It fuses pitch, loudness and sound events, maps tone onto the kA to kF axes plus valence, identifies sarcasm, and targets natural dialogue over acted corpora.">
-          <img class="hmx-p" src="assets/img/hmx-pipeline_20261027b.png" alt="Diagram of a streamed voice input passing through a chain of analysis stages into a k-vector and onward to SEMBA, with feedback loops returning to the start of the chain.">
         </div>
       </div>
     </div>
