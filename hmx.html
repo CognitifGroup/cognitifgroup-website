@@ -9,8 +9,8 @@
 <link rel="icon" href="assets/img/logo.png">
 <link rel="stylesheet" href="assets/css/style.css?v=35">
 <style>
-  .hmx-section .wrap { max-width:1400px; }
-  .hmx-grid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 0.8fr); gap:32px; align-items:stretch; }
+  .hmx-section .wrap { max-width:1400px !important; }
+  .hmx-grid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:32px; align-items:stretch; }
   .hmx-box { border:1px solid rgba(0,0,0,0.15); border-radius:6px; background:var(--paper); padding:28px 32px; }
   .hmx-box h2 { margin-top:0; }
   .hmx-box ul { list-style:disc; padding-left:1.2em; margin:1em 0; }
@@ -20,7 +20,7 @@
      keeping its aspect ratio, and sits on the same bottom line as the pipeline diagram (29px = box padding + border). */
   .hmx-images { position:relative; }
   .hmx-images .hmx-k { position:absolute; left:0; top:0; width:100%; height:calc(100% - 29px); object-fit:contain; object-position:center bottom; }
-  @media (max-width:1000px) {
+  @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
     .hmx-images { position:static; }
     .hmx-images .hmx-k { position:static; width:100%; max-width:560px; height:auto; margin:0 auto; display:block; object-fit:initial; }

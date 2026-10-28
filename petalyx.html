@@ -7,6 +7,13 @@
 <meta name="description" content="Petalyx™, a patent-pending process, registered design, and trademark of Cognitif Group Limited.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="stylesheet" href="assets/css/style.css?v=35">
+<style>
+  .pxc-pair{ display:flex; gap:20px; align-items:center; justify-content:center; }
+  .pxc-pair img, .pxc-canvas{ flex:1 1 0; min-width:0; max-width:calc(50% - 10px); display:block; }
+  .pxc-pair img{ height:auto; }
+  .pxc-canvas{ width:100%; aspect-ratio:1408 / 1536; }
+  @media (max-width:700px){ .pxc-pair{ flex-direction:column; } .pxc-pair img, .pxc-canvas{ flex:0 0 auto; max-width:100%; width:100%; } }
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -45,7 +52,10 @@
   <section class="flush-top" style="padding-bottom:12px;">
     <div class="wrap">
       <figure class="diagram">
-        <img src="assets/img/petalyx-diagram.jpg" alt="Diagram showing a central prompt word surrounded by five hexagonal response candidates and a sixth 'None of the Above' option." style="max-width:50%; margin:0 auto;">
+        <div class="pxc-pair">
+        <img src="assets/img/petalyx-diagram.jpg" alt="Diagram showing a central prompt word surrounded by five hexagonal response candidates and a sixth 'None of the Above' option.">
+        <canvas class="pxc-canvas" data-petalyx-capture role="img" aria-label="Animated illustration of the Petalyx capture layout: points converge into five response candidates and a None of the Above option, and reaction times pulse outwards."></canvas>
+      </div>
       </figure>
             <p class="slate center" style="margin-top:1.2em;"><a href="https://petalyx.cognitifgroup.ai/" target="_blank" rel="noopener">Try the Petalyx&trade; demo</a></p>
     </div>
@@ -78,5 +88,6 @@
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
+<script src="assets/js/petalyx-capture_20261028a.js" defer></script>
 </body>
 </html>

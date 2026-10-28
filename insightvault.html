@@ -9,8 +9,11 @@
 <link rel="stylesheet" href="assets/css/style.css?v=35">
 <style>
   .iv-pair{ display:flex; gap:20px; align-items:center; justify-content:center; }
-  .iv-pair img{ flex:1 1 0; min-width:0; max-width:calc(50% - 10px); height:auto; display:block; }
-  @media (max-width:700px){ .iv-pair{ flex-direction:column; } .iv-pair img{ flex:0 0 auto; max-width:100%; } }
+  .iv-pair img{ flex:0 0 auto; height:auto; display:block; }
+  /* right image 25% smaller than before; left image takes the space freed up */
+  .iv-pair img:first-child{ width:calc(62.5% - 12.5px); }
+  .iv-pair img:last-child{ width:calc(37.5% - 7.5px); }
+  @media (max-width:700px){ .iv-pair{ flex-direction:column; } .iv-pair img:first-child, .iv-pair img:last-child{ width:100%; } }
 </style>
 </head>
 <body>
