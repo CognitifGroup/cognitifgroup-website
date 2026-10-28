@@ -9,21 +9,16 @@
 <link rel="icon" href="assets/img/logo.png">
 <link rel="stylesheet" href="assets/css/style.css?v=35">
 <style>
-  .hmx-section .wrap { max-width:1400px !important; }
-  .hmx-grid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:32px; align-items:stretch; }
+  .hmx-grid { display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr); gap:32px; align-items:start; }
   .hmx-box { border:1px solid rgba(0,0,0,0.15); border-radius:6px; background:var(--paper); padding:28px 32px; }
   .hmx-box h2 { margin-top:0; }
   .hmx-box ul { list-style:disc; padding-left:1.2em; margin:1em 0; }
   .hmx-box li { margin-bottom:0.8em; }
-  .hmx-box .hmx-p { width:100%; height:auto; display:block; margin-top:24px; background:var(--paper); }
-  /* Right column: the infographic takes the largest size that fits the column and the height of the text box,
-     keeping its aspect ratio, and sits on the same bottom line as the pipeline diagram (29px = box padding + border). */
-  .hmx-images { position:relative; }
-  .hmx-images .hmx-k { position:absolute; left:0; top:0; width:100%; height:calc(100% - 29px); object-fit:contain; object-position:center bottom; }
+  /* Right column: the infographic at the top, the pipeline diagram directly beneath it, both at full column width */
+  .hmx-images { display:flex; flex-direction:column; gap:24px; }
+  .hmx-images img { width:100%; height:auto; display:block; background:var(--paper); }
   @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
-    .hmx-images { position:static; }
-    .hmx-images .hmx-k { position:static; width:100%; max-width:560px; height:auto; margin:0 auto; display:block; object-fit:initial; }
   }
 </style>
 </head>
@@ -38,7 +33,6 @@
             <li><a href="hmx.html" aria-current="page">HMX</a></li>
             <li><a href="semantic-bathymetry.html">Semantic Bathymetry™</a></li>
             <li><a href="insightvault.html">Insightvault</a></li>
-            <li><a href="architecture.html">Technology</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="privacy.html">Privacy</a></li>
             <li><a href="bibliography.html">Bibliography</a></li>
@@ -61,7 +55,7 @@
     </div>
   </section>
 
-  <section class="flush-top hmx-section">
+  <section class="flush-top">
     <div class="wrap">
       <div class="hmx-grid">
         <div class="hmx-box">
@@ -74,11 +68,11 @@
             <li class="slate"><strong>Natural dialogue, not acted speech.</strong> HMX is trained on free-format unstructured human dialogue, rather than acted- or prompted inputs, public broadcast or podcast media.</li>
           </ul>
           <p class="slate center" style="margin-top:1.2em; margin-bottom:0;"><a href="https://hmx.cognitifgroup.ai/" target="_blank" rel="noopener">Try the HMX demo</a></p>
-          <img class="hmx-p" src="assets/img/hmx-pipeline_20261027b.png" alt="Diagram of a streamed voice input passing through a chain of analysis stages into a k-vector and onward to SEMBA, with feedback loops returning to the start of the chain.">
         </div>
 
         <div class="hmx-images">
-          <img class="hmx-k" src="assets/img/hmx-k-space_20261027d.png" alt="Infographic: HMX maps voice affect into k-space. It fuses pitch, loudness and sound events, maps tone onto the kA to kF axes plus valence, identifies sarcasm, and targets natural dialogue over acted corpora.">
+          <img src="assets/img/hmx-k-space_20261027d.png" alt="Infographic: HMX maps voice affect into k-space. It fuses pitch, loudness and sound events, maps tone onto the kA to kF axes plus valence, identifies sarcasm, and targets natural dialogue over acted corpora.">
+          <img src="assets/img/hmx-pipeline_20261027b.png" alt="Diagram of a streamed voice input passing through a chain of analysis stages into a k-vector and onward to SEMBA, with feedback loops returning to the start of the chain.">
         </div>
       </div>
     </div>
