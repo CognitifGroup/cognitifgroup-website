@@ -9,15 +9,22 @@
 <link rel="icon" href="assets/img/logo.png">
 <link rel="stylesheet" href="assets/css/style.css?v=35">
 <style>
-  .hmx-grid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.5fr); gap:32px; align-items:end; }
+  .hmx-section .wrap { max-width:1400px; }
+  .hmx-grid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 0.8fr); gap:32px; align-items:stretch; }
   .hmx-box { border:1px solid rgba(0,0,0,0.15); border-radius:6px; background:var(--paper); padding:28px 32px; }
   .hmx-box h2 { margin-top:0; }
   .hmx-box ul { list-style:disc; padding-left:1.2em; margin:1em 0; }
   .hmx-box li { margin-bottom:0.8em; }
-  .hmx-images { display:flex; flex-direction:column; align-items:center; padding-bottom:29px; }
-  .hmx-images .hmx-k { width:100%; max-width:none; height:auto; display:block; background:var(--paper); }
-  @media (max-width:900px) { .hmx-grid { grid-template-columns:minmax(0, 1fr); align-items:start; } .hmx-images { padding-bottom:0; } }
   .hmx-box .hmx-p { width:100%; height:auto; display:block; margin-top:24px; background:var(--paper); }
+  /* Right column: the infographic takes the largest size that fits the column and the height of the text box,
+     keeping its aspect ratio, and sits on the same bottom line as the pipeline diagram (29px = box padding + border). */
+  .hmx-images { position:relative; }
+  .hmx-images .hmx-k { position:absolute; left:0; top:0; width:100%; height:calc(100% - 29px); object-fit:contain; object-position:center bottom; }
+  @media (max-width:1000px) {
+    .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
+    .hmx-images { position:static; }
+    .hmx-images .hmx-k { position:static; width:100%; max-width:560px; height:auto; margin:0 auto; display:block; object-fit:initial; }
+  }
 </style>
 </head>
 <body>
@@ -54,7 +61,7 @@
     </div>
   </section>
 
-  <section class="flush-top section-alt">
+  <section class="flush-top section-alt hmx-section">
     <div class="wrap">
       <div class="hmx-grid">
         <div class="hmx-box">
