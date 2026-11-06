@@ -32,8 +32,23 @@
   section.hero.hmx-hero { padding-bottom:calc(40px - 1.2rem); }
   /* this page only: the Hermeneutyx waveform logo in place of the Cognitif Group mark,
      same height and position, width following the logo's own proportions */
-  .hmx-hero .hmx-hero-logo { width:auto; }
-  @media (max-width:700px){ .hmx-hero .hmx-hero-logo { width:auto; height:48px; } }
+  .hmx-hero .hmx-hero-logo { display:block; width:172.8px; height:72px; }
+  .hmx-hero-logo img { display:block; width:100%; height:100%; }
+  @media (max-width:700px){ .hmx-hero .hmx-hero-logo { width:115.2px; height:48px; } }
+  /* the logo shape is used as a stencil, filled with a colour that cycles
+     navy -> copper -> navy every 3 seconds; browsers without stencil support
+     show the original dark-grey logo; reduced-motion visitors see it in navy */
+  @supports ((mask-image:url("x.png")) or (-webkit-mask-image:url("x.png"))) {
+    .hmx-hero-logo {
+      background-color:var(--navy);
+      -webkit-mask:url("assets/img/hmx-logo-wave_20261106a.png") center / contain no-repeat;
+      mask:url("assets/img/hmx-logo-wave_20261106a.png") center / contain no-repeat;
+      animation:hmxLogoCycle 3s ease-in-out infinite;
+    }
+    .hmx-hero-logo img { opacity:0; }
+  }
+  @keyframes hmxLogoCycle { 0%, 100% { background-color:var(--navy); } 50% { background-color:var(--coral-deep); } }
+  @media (prefers-reduced-motion: reduce) { .hmx-hero-logo { animation:none; } }
   @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
   }
@@ -64,7 +79,7 @@
   </header>
   <section class="hero hero--tight hmx-hero">
     <div class="hero-texture" aria-hidden="true"></div>
-    <img class="hero-logo hmx-hero-logo" src="assets/img/hmx-logo-wave_20261106a.png" alt="Hermeneutyx">
+    <span class="hero-logo hmx-hero-logo" role="img" aria-label="Hermeneutyx"><img src="assets/img/hmx-logo-wave_20261106a.png" alt=""></span>
     <div class="wrap hero-inner">
       <span class="eyebrow">The voice layer</span>
       <h1>Hermeneutyx (HMX)</h1>
