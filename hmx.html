@@ -23,6 +23,10 @@
      sequence, so it sits midway between the infographic and the wave */
   .hmx-images { align-self:stretch; }
   .hmx-wave { width:100%; height:90px; display:block; background:var(--paper); }
+  /* trade mark line under the sub-header: body text size, fitted into the space
+     the sub-header's bottom margin already took, so the hero does not grow */
+  .hmx-lede { margin-bottom:0; }
+  .hmx-tm { margin:0; line-height:1.2rem; }
   @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
   }
@@ -57,7 +61,8 @@
     <div class="wrap hero-inner">
       <span class="eyebrow">The voice layer</span>
       <h1>Hermeneutyx (HMX)</h1>
-      <p class="lede">Listening, not simply Hearing</p>
+      <p class="lede hmx-lede">Listening, not simply Hearing</p>
+      <p class="slate hmx-tm">Hermeneutyx&trade; &mdash; UK trade mark application No. UK00004464138</p>
     </div>
   </section>
 
