@@ -1,5 +1,5 @@
 /* ============================================================
-   vault-radar_20261106c.js
+   vault-radar_20261106d.js
    Originated by and the copyright intellectual property of
    Cognitif Group Limited. All rights reserved.
 
@@ -10,7 +10,8 @@
    Changes from the source: the graphic is always centred
    horizontally in its canvas (source offset it right on wide screens);
    six outer-ring nodes aligned to the six axes (source had eight);
-   overall diameter enlarged by 5%.
+   overall diameter enlarged by 5%; hub raised to H*0.499 to sit level
+   with the hub of the adjacent compass image (source: H*0.52).
    Usage: <canvas data-vault-radar></canvas>
    ============================================================ */
 (function () {
@@ -69,7 +70,7 @@
     var radarRegen = -1;
     return function (ctx, W, H, te) {
       var cx = W * 0.5;
-      var cy = H * 0.52;
+      var cy = H * 0.499;   /* hub level with the compass image hub (measured at 314.5/630 px) */
       var R = Math.min(W * 0.3, H * 0.36) * 1.05;   /* +5% diameter vs source */
       var sy = window.scrollY || 0;
       if (!parts) {
