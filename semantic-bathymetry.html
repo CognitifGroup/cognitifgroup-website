@@ -7,6 +7,13 @@
 <meta name="description" content="Semantic Bathymetry™, a trademark of Cognitif Group Limited.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="stylesheet" href="assets/css/style.css?v=35">
+<meta name="copyright" content="Originated by and the copyright intellectual property of Cognitif Group Limited.">
+<style>
+  /* six-axis image and animated radar, side by side, half width each */
+  .sb-pair{ display:flex; align-items:center; width:100%; }
+  .sb-pair img, .sb-pair canvas{ flex:0 0 50%; width:50%; aspect-ratio:1174/630; height:auto; display:block; background:var(--paper); }
+  @media (max-width:700px){ .sb-pair{ flex-direction:column; } .sb-pair img, .sb-pair canvas{ flex-basis:auto; width:100%; } }
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -56,7 +63,10 @@
         <p class="slate">Every response is mapped across six axes and projected onto a continuous 3D surface, capturing a population's emotional stance.</p>
       </div>
     </div>
-        <img src="assets/img/affective-axes-v2_20261028a.png" alt="Compass-style star diagram showing six structural coordinates: Approach vs. Avoidance (orientation vector), Safety vs. Threat (security baseline), Power vs. Powerlessness (agency capacity), Trust vs. Suspicion (reliability index), Moral Sanction vs. Transgression (integrity boundary), and Vitality vs. Depletion (momentum energy)." style="width:67.5%; max-width:67.5%; height:auto; display:block; margin:0 auto; background:var(--paper);">
+    <div class="sb-pair">
+        <img src="assets/img/affective-axes-v2_20261028a.png" alt="Compass-style star diagram showing six structural coordinates: Approach vs. Avoidance (orientation vector), Safety vs. Threat (security baseline), Power vs. Powerlessness (agency capacity), Trust vs. Suspicion (reliability index), Moral Sanction vs. Transgression (integrity boundary), and Vitality vs. Depletion (momentum energy).">
+        <canvas data-vault-radar role="img" aria-label="Animated illustration of a six-axis radar chart inside a dial; the readings shown are illustrative only."></canvas>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -72,5 +82,6 @@
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/vault-radar_20261106a.js"></script>
 </body>
 </html>
