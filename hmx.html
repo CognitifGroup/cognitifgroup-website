@@ -19,6 +19,10 @@
   .hmx-images img { width:100%; height:auto; display:block; background:var(--paper); }
   /* lower right: scrolling "arrow of time" sequence of radial dials */
   .hmx-timeline { width:100%; aspect-ratio:3/1; height:auto; display:block; background:var(--paper); }
+  /* audio-transmission wave, pushed to the bottom of the right column so it lines up
+     with the bottom of the text box on the left */
+  .hmx-images { align-self:stretch; }
+  .hmx-wave { width:100%; height:90px; display:block; margin-top:auto; background:var(--paper); }
   @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
   }
@@ -74,6 +78,7 @@
         <div class="hmx-images">
           <img src="assets/img/hmx-k-space_20261027d.png" alt="Infographic: HMX maps voice affect into k-space. It fuses pitch, loudness and sound events, maps tone onto the kA to kF axes plus valence, identifies sarcasm, and targets natural dialogue over acted corpora.">
           <canvas class="hmx-timeline" data-hmx-timeline role="img" aria-label="Animated sequence of six-axis radial diagrams linked by arrows pointing left to right: a new affective fingerprint forms on the right as time progresses, earlier ones freeze and move left, and the oldest fades away. Readings are illustrative only."></canvas>
+          <canvas class="hmx-wave" data-hmx-wave role="img" aria-label="Animated illustration of an audio transmission: a navy frequency-modulated wave over a copper speech-like amplitude pattern, scrolling from right to left."></canvas>
         </div>
       </div>
     </div>
@@ -92,6 +97,7 @@
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/hmx-timeline_20261106a.js"></script>
+  <script src="assets/js/hmx-timeline_20261106b.js"></script>
+  <script src="assets/js/hmx-wave_20261106a.js"></script>
 </body>
 </html>
