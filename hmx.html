@@ -30,6 +30,10 @@
   .hmx-lede { margin-bottom:0; font-weight:700; font-style:italic; color:var(--coral-deep); }
   .hmx-tm { margin:1.2rem 0 0; line-height:1.2rem; }
   section.hero.hmx-hero { padding-bottom:calc(40px - 1.2rem); }
+  /* this page only: the Hermeneutyx waveform logo in place of the Cognitif Group mark,
+     same height and position, width following the logo's own proportions */
+  .hmx-hero .hmx-hero-logo { width:auto; }
+  @media (max-width:700px){ .hmx-hero .hmx-hero-logo { width:auto; height:48px; } }
   @media (max-width:800px) {
     .hmx-grid { grid-template-columns:minmax(0, 1fr); gap:24px; }
   }
@@ -60,7 +64,7 @@
   </header>
   <section class="hero hero--tight hmx-hero">
     <div class="hero-texture" aria-hidden="true"></div>
-    <img class="hero-logo" src="assets/img/logo.png" alt="Cognitif Group Limited">
+    <img class="hero-logo hmx-hero-logo" src="assets/img/hmx-logo-wave_20261106a.png" alt="Hermeneutyx">
     <div class="wrap hero-inner">
       <span class="eyebrow">The voice layer</span>
       <h1>Hermeneutyx (HMX)</h1>
