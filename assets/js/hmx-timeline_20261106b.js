@@ -1,5 +1,5 @@
 /* ============================================================
-   hmx-timeline_20261106a.js
+   hmx-timeline_20261106b.js
    Originated by and the copyright intellectual property of
    Cognitif Group Limited. All rights reserved.
 
@@ -10,6 +10,7 @@
    it freezes; the oldest fades out on the left. Arrows link each
    dial to the next, pointing left to right.
    Readings are RANDOM and decorative only - not data-driven.
+   Each dial's radar plot gets a random colour when it is created.
    Usage: <canvas data-hmx-timeline></canvas>
    ============================================================ */
 (function () {
@@ -29,8 +30,18 @@
     { r: 0.64, ticks: 36, dash: false, start: -1.1, drift: 0.02, w: 1 }
   ];
 
+  function hslToRgb(h, s, l) {
+    var c = (1 - Math.abs(2 * l - 1)) * s, x = c * (1 - Math.abs((h / 60) % 2 - 1)), m = l - c / 2;
+    var r = 0, g = 0, b = 0;
+    if (h < 60) { r = c; g = x; } else if (h < 120) { r = x; g = c; } else if (h < 180) { g = c; b = x; }
+    else if (h < 240) { g = x; b = c; } else if (h < 300) { r = x; b = c; } else { r = c; b = x; }
+    return Math.round((r + m) * 255) + "," + Math.round((g + m) * 255) + "," + Math.round((b + m) * 255);
+  }
+
   function newItem() {
-    var it = { vals: [], parts: [] };
+    /* random radar colour: any hue, kept mid-tone so it reads on paper */
+    var hue = Math.random() * 360, sat = 0.5 + Math.random() * 0.25, lig = 0.36 + Math.random() * 0.12;
+    var it = { vals: [], parts: [], rgb: hslToRgb(hue, sat, lig) };
     for (var v = 0; v < 6; v++) it.vals.push(0.38 + Math.random() * 0.57);
     for (var i = 0; i < 120; i++) {
       it.parts.push({ sa: Math.random() * 6.2832, sr: 0.82 + Math.random() * 0.16, ring: i % 3, ang: Math.random() * 6.2832, d: Math.random() * 0.35 });
@@ -149,15 +160,15 @@
           p6 ? ctx.lineTo(Math.cos(pa) * pr, Math.sin(pa) * pr) : ctx.moveTo(Math.cos(pa) * pr, Math.sin(pa) * pr);
         }
         ctx.closePath();
-        ctx.fillStyle = "rgba(160,95,60," + (0.1 * pf).toFixed(3) + ")";
+        ctx.fillStyle = "rgba(" + it.rgb + "," + (0.12 * pf).toFixed(3) + ")";
         ctx.fill();
-        ctx.strokeStyle = "rgba(166,98,62," + (0.6 * pf).toFixed(3) + ")";
+        ctx.strokeStyle = "rgba(" + it.rgb + "," + (0.7 * pf).toFixed(3) + ")";
         ctx.lineWidth = 1.2;
         ctx.stroke();
         for (var d6 = 0; d6 < 6; d6++) {
           var da = -1.5708 + d6 / 6 * 6.2832;
           var dr = HR * it.vals[d6] * pf;
-          ctx.fillStyle = "rgba(166,98,62," + (0.85 * pf).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(" + it.rgb + "," + (0.9 * pf).toFixed(3) + ")";
           ctx.beginPath();
           ctx.arc(Math.cos(da) * dr, Math.sin(da) * dr, 2.3 + (motionOK ? Math.sin(te * 2 + d6 * 1.3) * 0.6 : 0), 0, 6.2832);
           ctx.fill();
