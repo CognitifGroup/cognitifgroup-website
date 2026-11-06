@@ -1,5 +1,5 @@
 /* ============================================================
-   vault-radar_20261106a.js
+   vault-radar_20261106b.js
    Originated by and the copyright intellectual property of
    Cognitif Group Limited. All rights reserved.
 
@@ -7,8 +7,9 @@
    Insightvault hero on cognitifgroup.com
    (repo cognitifgroup-com-website, assets/js/main.js, makeVault).
    Readings are RANDOM and decorative only - not data-driven.
-   Only change from the source: the graphic is always centred
-   horizontally in its canvas (source offset it right on wide screens).
+   Changes from the source: the graphic is always centred
+   horizontally in its canvas (source offset it right on wide screens);
+   six outer-ring nodes aligned to the six axes (source had eight).
    Usage: <canvas data-vault-radar></canvas>
    ============================================================ */
 (function () {
@@ -155,8 +156,9 @@
         ctx.beginPath(); ctx.arc(cx, cy, R * (1 + fl * 0.35), 0, 6.2832); ctx.stroke();
       }
       var bf = smooth(clamp((te - 2.55) / 0.5, 0, 1));
-      for (var b = 0; b < 8; b++) {
-        var ba = b / 8 * 6.2832 + 0.3927;
+      /* six outer-ring nodes, one on each radar axis (source had 8) */
+      for (var b = 0; b < 6; b++) {
+        var ba = -1.5708 + b / 6 * 6.2832;
         var br = R * (1.02 + 0.07 * bf);
         ctx.fillStyle = "rgba(166,98,62," + (0.7 * bf).toFixed(3) + ")";
         ctx.beginPath(); ctx.arc(cx + Math.cos(ba) * br, cy + Math.sin(ba) * br, 2.4, 0, 6.2832); ctx.fill();
