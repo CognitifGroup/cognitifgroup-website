@@ -1,12 +1,13 @@
 /*
- * petalyx-capture_20261028b.js
+ * petalyx-capture_20261106a.js
  * The Petalyx capture constellation: particles converge into five radial candidates and a "None of the Above"
  * node, and pulses record reaction times. Drawn on any <canvas data-petalyx-capture> element.
  *
  * Originated by and the copyright intellectual property of Cognitif Group Limited.
  * The drawing routine is the one used on the cognitifgroup.com Petalyx page. Differences: the helper functions are
  * included here, the animation loop is self-contained, the label font is a system font, and the drawing is
- * scaled up to fill the canvas.
+ * scaled up to fill the canvas. 20261106a: centre raised from H*0.52 to H*0.499 so the hub sits level with
+ * the Prompt Word hub of the adjacent diagram image (measured at 783 of 1568 px).
  */
 (function () {
   "use strict";
@@ -23,7 +24,7 @@
     var parts = null, events = [], lastPulse = 0;
     return function (ctx, W, H, te) {
       var cx = W > 860 ? W * 0.66 : W * 0.5;
-      var cy = H * 0.52;
+      var cy = H * 0.499;   /* hub level with the Prompt Word hub of petalyx-diagram.jpg */
       /* larger than on the .com hero: the constellation fills the canvas, and element sizes scale with it */
       var R = Math.min(W * 0.46, H * 0.43);
       var k = clamp(R / 110, 1, 1.8);
