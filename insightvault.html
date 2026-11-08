@@ -17,15 +17,16 @@
   /* 8 Nov 2026: the three card headings in dark navy (Insightvault navy); the PQ heading links to the Stability (PQ) page */
   .iv-card-title, .iv-card-title a{ color:#1E3358; }
   .iv-card-title a{ text-decoration:underline; text-underline-offset:3px; }
-  /* 8 Nov 2026, 11:13: the INSV logo moved from the hero's right margin to the left of the navigation bar */
-  .iv-brand img{ height:48px; width:48px; }
+  /* 8 Nov 2026, 11:25: the INSV logo beside the page title (moved from the navigation bar), at the title's height */
+  .iv-title{ display:flex; align-items:center; gap:18px; }
+  .iv-title img{ height:72px; width:72px; flex:0 0 auto; }
+  @media (max-width:700px){ .iv-title img{ height:48px; width:48px; } }
 </style>
 <meta name="copyright" content="Originated by and the copyright intellectual property of Cognitif Group Limited.">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand iv-brand" href="insightvault.html" aria-label="Insightvault"><img src="assets/img/insv-logo_20261108a.png" alt="Insightvault"></a>
       <nav class="main-nav" aria-label="Primary">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -50,7 +51,7 @@
     <div class="hero-texture" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <span class="eyebrow">The analysis layer</span>
-      <h1>Insightvault</h1>
+      <h1 class="iv-title">Insightvault<img src="assets/img/insv-logo_20261108a.png" alt="" aria-hidden="true"></h1>
       <p class="lede">AI-assisted analysis and optimisation.</p>
     </div>
   </section>
